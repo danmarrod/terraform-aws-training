@@ -33,3 +33,8 @@ variable "key_name" {
   type        = string
   default     = "paris-keys"
 }
+
+variable "portainer_key" {
+  description = "Key pass for Portainer"
+  type        = string
+}

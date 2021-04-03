@@ -56,7 +56,7 @@ EOF
 
   provisioner "remote-exec" {
     inline = [
-      "echo -n ${var.author} > /tmp/portainer_password",
+      "echo -n ${var.portainer_key} > /tmp/portainer_password",
       "docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/portainer_password:/tmp/portainer_password portainer/portainer-ce --admin-password-file /tmp/portainer_password",
       "docker build https://github.com/danmarrod/random-app.git -t alea",
       "docker run --name alea0 -p 8001:5000 -d alea"
